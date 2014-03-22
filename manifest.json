@@ -1,0 +1,17 @@
+{
+	"manifest_version": 2,
+	"name": "Popular Pages Rover",
+	"description": "Crawls the current website and returns the most popular pages.",
+	"version": "1.0",
+	"permissions": ["http://query.yahooapis.com/*", "tabs", "http://urls.api.twitter.com/1/urls/count.json*", "https://api.parse.com/" ],
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+    {
+      "js": ["jquery.min.js", "script.js", "parse.js"],
+      "matches": [ "http://*/*", "https://*/*"]
+    }
+  ]
+}
